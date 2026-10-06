@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fandoms Nas Ruas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <div>
+                    <h1>Fandoms Nas Ruas</h1>
+                    <span>Manifestações e Atos em prol do 2° Turno</span>
+                </div>
+            </div>
+            
+            <nav class="desktop-nav">
+                <button onclick="switchTab('manifestacoes')" id="btn-tab-manifestacoes" class="tab-btn active">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <span>Manifestações</span>
+                </button>
+                <button onclick="switchTab('feed')" id="btn-tab-feed" class="tab-btn">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Notícias & Feed</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="tab-manifestacoes" class="tab-content">
+            <div class="manifestacoes-wrapper">
+                <div class="section-top-bar">
+                    <div>
+                        <h2>Verifique as Mobilizações que iram acontecer perto de você!</h2>
+                    </div>
+                    <div class="search-box">
+                        <i class="fa-solid fa-search search-icon"></i>
+                        <input type="text" id="search-input" oninput="filterLocations()" placeholder="Buscar por cidade ou estado">
+                    </div>
+                </div>
+                <div id="locations-grid" class="locations-grid">
+                </div>
+            </div>
+        </div>
+        <div id="tab-feed" class="tab-content hidden">
+            <div class="feed-wrapper">
+                <div class="feed-divider">
+                    <div class="feed-section-title">
+                        <h2><i class="fa-brands fa-twitter"></i> Redes Sociais & Avisos Oficiais</h2>
+                    </div>
+                    <div class="social-grid" id="social-grid"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav class="mobile-nav">
+        <button onclick="switchTab('manifestacoes')" id="mobile-tab-manifestacoes" class="mobile-tab active">
+            <i class="fa-solid fa-list-ul"></i>
+            <span>Atos</span>
+        </button>
+        <button onclick="switchTab('feed')" id="mobile-tab-feed" class="mobile-tab">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Feed</span>
+        </button>
+    </nav>
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
